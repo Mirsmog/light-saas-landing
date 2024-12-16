@@ -9,7 +9,7 @@ import ArrowRightIcon from '@/assets/arrow-right.svg';
 
 import { cn } from '@/utils/cn';
 import { NAV_LINKS } from '@/constants';
-import Button from '@/components/ui/button';
+import Button from '@/components/share/ui/button';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -17,7 +17,7 @@ interface IHeader {}
 
 const Header: React.FC<IHeader> = ({}) => {
   return (
-    <header className="">
+    <header className="fixed top-0 w-full backdrop-blur-md z-50">
       <div className={cn(inter.className, 'bg-black text-white flex items-center justify-center py-3')}>
         <p className="mr-3 hidden text-sm opacity-60 md:block">Streamline your workflow and boost your productivity.</p>
         <p className="peer mr-1 cursor-pointer text-xs lg:hover:underline">Get started for free</p>
@@ -35,8 +35,8 @@ const Header: React.FC<IHeader> = ({}) => {
                 <Image src={Logo} alt="saas-logo" width={40} height={40} />
               </Link>
             </button>
-            <div className="hidden gap-6 md:flex">
-              <nav>
+            <div className="hidden md:flex items-center">
+              <nav className="flex gap-6 items-center">
                 <ul className="flex items-center -mx-3">
                   {NAV_LINKS.map(({ name, href }) => (
                     <li>
@@ -49,8 +49,8 @@ const Header: React.FC<IHeader> = ({}) => {
                     </li>
                   ))}
                 </ul>
+                <Button>Get for free</Button>
               </nav>
-              <Button>Get for free</Button>
             </div>
             <button className="md:hidden">
               <MenuIcon className="size-5" />

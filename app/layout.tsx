@@ -1,16 +1,16 @@
-import type { Metadata } from "next";
-import { DM_Sans, Inter } from "next/font/google";
+import type { Metadata } from 'next';
+import { DM_Sans } from 'next/font/google';
 
-import { cn } from "@/utils/cn";
-import "./globals.css";
-import Header from "@/components/header";
-import Footer from "@/components/footer";
+import { cn } from '@/utils/cn';
+import './globals.css';
+import Header from '@/components/header';
+import Footer from '@/components/footer';
 
-const dmSans = DM_Sans({ subsets: ["latin"] });
+const dmSans = DM_Sans({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: "Light Saas - Landing Page",
-  description: "Saas project on NEXT.JS",
+  title: 'Light Saas - Landing Page',
+  description: 'Saas project on NEXT.JS',
 };
 
 export default function RootLayout({

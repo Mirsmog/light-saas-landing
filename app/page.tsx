@@ -1,3 +1,11 @@
+import Hero from '@/sections/hero';
+import LogoCarousel from '@/sections/logo-carousel';
+
 export default function Home() {
-  return <main className="min-h-[200dvh]">Hello world</main>;
+  return (
+    <main className="">
+      <Hero />
+      <LogoCarousel />
+    </main>
+  );
 }
