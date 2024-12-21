@@ -25,6 +25,19 @@ const config: Config = {
           lg: '80px',
         },
       },
+      keyframes: {
+        'fade-down': {
+          '0%': {
+            transform: 'translateY(-100%)',
+          },
+          '100%': {
+            transform: 'translateY(0)',
+          },
+        },
+      },
+      animation: {
+        'fade-down': 'fade-down 0.3s ease',
+      },
     },
   },
   plugins: [],

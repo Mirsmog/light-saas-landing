@@ -12,3 +12,10 @@
     @apply text-foreground bg-background;
   }
 }
+
+@layer components {
+  .logo-ticker-image {
+    @apply h-8 w-auto;
+  }
+
+}

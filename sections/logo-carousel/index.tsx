@@ -23,7 +23,7 @@ const LogoCarousel: React.FC<ILogoCarousel> = ({}) => {
               translateX: '-50%',
             }}
             transition={{
-              duration: 50,
+              duration: 40,
               repeat: Infinity,
               ease: 'linear',
               repeatType: 'loop',

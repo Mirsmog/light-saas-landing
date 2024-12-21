@@ -1,4 +1,5 @@
-import React from 'react';
+'use client';
+import React, { useEffect, useRef, useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { Inter } from 'next/font/google';
@@ -13,11 +14,39 @@ import Button from '@/components/share/ui/button';
 
 const inter = Inter({ subsets: ['latin'] });
 
-interface IHeader {}
+const Header = () => {
+  const [isVisible, setIsVisible] = useState(false);
+  const lastScrollY = useRef(0);
 
-const Header: React.FC<IHeader> = ({}) => {
+  const handleScroll = () => {
+    const currentScrollY = window.scrollY;
+    if (currentScrollY > 700) {
+      if (currentScrollY < lastScrollY.current) {
+        setIsVisible(true);
+      } else {
+        setIsVisible(false);
+      }
+    } else {
+      setIsVisible(false);
+    }
+
+    lastScrollY.current = currentScrollY;
+  };
+
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
   return (
-    <header className="fixed top-0 w-full backdrop-blur-md z-50">
+    <header
+      className={cn(
+        'top-0  w-full backdrop-blur-md z-50 transition-transform',
+        isVisible ? 'fixed animate-fade-down' : 'absolute',
+      )}
+    >
       <div className={cn(inter.className, 'bg-black text-white flex items-center justify-center py-3')}>
         <p className="mr-3 hidden text-sm opacity-60 md:block">Streamline your workflow and boost your productivity.</p>
         <p className="peer mr-1 cursor-pointer text-xs lg:hover:underline">Get started for free</p>
@@ -39,7 +68,7 @@ const Header: React.FC<IHeader> = ({}) => {
               <nav className="flex gap-6 items-center">
                 <ul className="flex items-center -mx-3">
                   {NAV_LINKS.map(({ name, href }) => (
-                    <li>
+                    <li key={name}>
                       <Link
                         className="inline-flex py-2 px-3 text-black/60 hover:text-black/100 transition-colors"
                         href={href}
