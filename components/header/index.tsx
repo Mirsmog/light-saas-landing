@@ -59,18 +59,18 @@ const Header = () => {
       <div className="py-5">
         <div className="container">
           <div className="flex items-center justify-between">
-            <button className="active:scale-90 hover:rotate-180 transition-transform duration-300">
+            <button className="transition-transform duration-300 hover:rotate-180 active:scale-90">
               <Link href={'/'}>
                 <Image src={Logo} alt="saas-logo" width={40} height={40} />
               </Link>
             </button>
-            <div className="hidden md:flex items-center">
-              <nav className="flex gap-6 items-center">
-                <ul className="flex items-center -mx-3">
+            <div className="hidden items-center md:flex">
+              <nav className="flex items-center gap-6">
+                <ul className="-mx-3 flex items-center">
                   {NAV_LINKS.map(({ name, href }) => (
                     <li key={name}>
                       <Link
-                        className="inline-flex py-2 px-3 text-black/60 hover:text-black/100 transition-colors"
+                        className="inline-flex px-3 py-2 text-black/60 transition-colors hover:text-black/100"
                         href={href}
                       >
                         {name}
