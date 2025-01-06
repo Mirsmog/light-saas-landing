@@ -9,16 +9,14 @@ import ArrowRightIcon from '@/assets/arrow-right.svg';
 
 interface IHero {}
 
-const Hero: React.FC<IHero> = ({}) => {
+export const Hero: React.FC<IHero> = ({}) => {
   return (
     <section className="overflow-x-clip bg-[radial-gradient(ellipse_200%_100%_at_bottom_left,#183EC2,#EAEEFE_80%)] pb-20 pt-36 md:pb-8">
       <div className="container">
         <div className="items-center md:flex">
           <div className="md:w-[480px]">
             <div className="flex flex-col items-baseline gap-6 md:gap-8">
-              <span className="rounded-lg border border-black/10 px-3 py-1 text-sm font-medium">
-                Version 2.0 is here
-              </span>
+              <span className="tag">Version 2.0 is here</span>
               <h1 className="bg-gradient-to-b from-black to-[#001E80] bg-clip-text text-5xl font-bold tracking-tighter text-transparent md:text-7xl">
                 Pathway to productivity
               </h1>
@@ -68,5 +66,3 @@ const Hero: React.FC<IHero> = ({}) => {
     </section>
   );
 };
-
-export default Hero;

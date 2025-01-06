@@ -9,13 +9,17 @@
 
 @layer base {
   body {
-    @apply text-foreground bg-background;
+    @apply bg-background text-foreground;
   }
 }
 
 @layer components {
   .logo-ticker-image {
     @apply h-8 w-auto;
+  }
+
+  .tag {
+    @apply rounded-lg border border-black/10 px-3 py-1 text-sm font-medium;
   }
 
 }

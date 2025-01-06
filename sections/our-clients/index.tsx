@@ -10,9 +10,7 @@ import celestialLogo from '@/assets/logo-celestial.png';
 import pulseLogo from '@/assets/logo-pulse.png';
 import apexLogo from '@/assets/logo-apex.png';
 
-interface ILogoCarousel {}
-
-const LogoCarousel: React.FC<ILogoCarousel> = ({}) => {
+export const OurClients = () => {
   return (
     <div className="py-8 md:py-12 bg-white">
       <div className="container">
@@ -47,5 +45,3 @@ const LogoCarousel: React.FC<ILogoCarousel> = ({}) => {
     </div>
   );
 };
-
-export default LogoCarousel;
