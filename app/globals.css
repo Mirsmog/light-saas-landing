@@ -30,6 +30,10 @@
     @apply text-xl tracking-tight text-[#010D3E];
   }
 
+  .card {
+    @apply rounded-3xl p-10 shadow-md outline outline-1 outline-[#F1F1F1] bg-white text-black;
+  }
+
 }
 
 @layer utilities {

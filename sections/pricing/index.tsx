@@ -65,7 +65,7 @@ export const Pricing: React.FC<IPricing> = ({}) => {
             Free forever. Upgrade for unlimited tasks, better security, and exclusive features.
           </p>
         </div>
-        <ul className="flex flex-col gap-6 mt-10 md:flex-row items-end">
+        <ul className="flex flex-col gap-6 mt-10 md:flex-row items-end md:justify-center">
           {pricingTiers.map((tier) => (
             <PricingCard {...tier} />
           ))}

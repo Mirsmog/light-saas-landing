@@ -22,12 +22,7 @@ export const PricingCard: React.FC<IPricingCard> = ({
   inverse,
 }) => {
   return (
-    <div
-      className={cn(
-        'rounded-3xl p-10 shadow-md outline outline-1 outline-[#F1F1F1] bg-white text-black',
-        inverse && 'invert outline-0',
-      )}
-    >
+    <div className={cn('card', inverse && 'invert outline-0')}>
       <div className="flex flex-col gap-8">
         <div className="flex items-center justify-between">
           <h3 className="text-lg font-bold opacity-50">{title}</h3>
