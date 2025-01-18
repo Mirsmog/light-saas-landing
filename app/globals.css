@@ -22,4 +22,35 @@
     @apply rounded-lg border border-black/10 px-3 py-1 text-sm font-medium;
   }
 
+  .title {
+    @apply bg-gradient-to-b from-black to-[#001E80] bg-clip-text text-3xl font-bold tracking-tighter text-transparent md:text-[54px] md:leading-[60px];
+  }
+
+  .subtitle {
+    @apply text-xl tracking-tight text-[#010D3E];
+  }
+
+}
+
+@layer utilities {
+  .text-gradient {
+    background-image: linear-gradient(90deg, #dd7ddf, #e1cd86, #bbcb92, #71c2ef, #3bffff, #dd7ddf);
+    background-size: 360% 360%;
+    animation: gradient-animation 6s ease infinite;
+  }
+}
+
+
+@keyframes gradient-animation {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
 }

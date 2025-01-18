@@ -10,10 +10,8 @@ export const ProductOverview = () => {
       <div className="container">
         <div className="mx-auto flex max-w-xl flex-col items-center gap-y-5 text-center">
           <span className="tag">Boost your productivity</span>
-          <h2 className="bg-gradient-to-b from-black to-[#001E80] bg-clip-text text-3xl font-bold tracking-tighter text-transparent md:text-[54px] md:leading-[60px]">
-            A more effective way to track progress
-          </h2>
-          <p className="text-xl tracking-tight text-[#010D3E]">
+          <h2 className="title">A more effective way to track progress</h2>
+          <p className="subtitle">
             Celebrate the joy of accomplishment with an app designed to track your progress and motivate your efforts.
           </p>
         </div>

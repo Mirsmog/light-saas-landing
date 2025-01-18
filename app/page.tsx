@@ -1,4 +1,4 @@
-import { Hero, OurClients, ProductOverview } from '@/sections';
+import { Hero, OurClients, Pricing, ProductOverview } from '@/sections';
 
 export default function Home() {
   return (
@@ -6,6 +6,7 @@ export default function Home() {
       <Hero />
       <OurClients />
       <ProductOverview />
+      <Pricing />
     </main>
   );
 }
