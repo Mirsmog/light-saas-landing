@@ -1,16 +1,15 @@
 'use client';
 import React, { useEffect, useRef, useState } from 'react';
 import Link from 'next/link';
-import Image from 'next/image';
 import { Inter } from 'next/font/google';
 
-import Logo from '@/assets/logosaas.png';
 import MenuIcon from '@/assets/menu.svg';
 import ArrowRightIcon from '@/assets/arrow-right.svg';
 
 import { cn } from '@/utils/cn';
-import { NAV_LINKS } from '@/constants';
+import { HEADER_LINKS } from '@/constants';
 import Button from '@/components/share/ui/button';
+import { Logo } from '../share/ui/logo';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -59,15 +58,11 @@ const Header = () => {
       <div className="py-5">
         <div className="container">
           <div className="flex items-center justify-between">
-            <button className="transition-transform duration-300 hover:rotate-180 active:scale-90">
-              <Link href={'/'}>
-                <Image src={Logo} alt="saas-logo" width={40} height={40} />
-              </Link>
-            </button>
+            <Logo />
             <div className="hidden items-center md:flex">
               <nav className="flex items-center gap-6">
                 <ul className="-mx-3 flex items-center">
-                  {NAV_LINKS.map(({ name, href }) => (
+                  {HEADER_LINKS.map(({ name, href }) => (
                     <li key={name}>
                       <Link
                         className="inline-flex px-3 py-2 text-black/60 transition-colors hover:text-black/100"

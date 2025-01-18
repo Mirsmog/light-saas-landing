@@ -81,7 +81,7 @@ export const Testimonials = () => {
   const testimonialsChunks = splitArrayIntoChunks(testimonials, 3);
 
   return (
-    <section>
+    <section className="pb-24">
       <div className="container">
         <div className="mx-auto flex max-w-lg flex-col items-center gap-5 text-center">
           <span className="tag">Version 2.0 is here</span>

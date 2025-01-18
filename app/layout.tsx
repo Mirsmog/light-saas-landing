@@ -4,7 +4,7 @@ import { DM_Sans } from 'next/font/google';
 import { cn } from '@/utils/cn';
 import './globals.css';
 import Header from '@/components/header';
-import Footer from '@/components/footer';
+import { Footer } from '@/components/footer';
 
 const dmSans = DM_Sans({ subsets: ['latin'] });
 
