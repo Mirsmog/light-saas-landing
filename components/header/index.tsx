@@ -42,7 +42,7 @@ const Header = () => {
   return (
     <header
       className={cn(
-        'top-0  w-full backdrop-blur-md z-50 transition-transform',
+        'top-0  w-full backdrop-blur-md z-50 transition-transform border-b border-black/5',
         isVisible ? 'fixed animate-fade-down' : 'absolute',
       )}
     >

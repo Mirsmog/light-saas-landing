@@ -1,7 +1,7 @@
-import React from 'react';
-import Image from 'next/image';
-
+'use client';
+import { useRef } from 'react';
 import Button from '@/components/share/ui/button';
+import { useScroll, useTransform, motion } from 'framer-motion';
 
 import StarImage from '@/assets/star.png';
 import SpringImage from '@/assets/spring.png';
@@ -10,9 +10,15 @@ import ArrowRightIcon from '@/assets/arrow-right.svg';
 interface ICallToAction {}
 
 export const CallToAction: React.FC<ICallToAction> = ({}) => {
+  const sectionEl = useRef<HTMLDivElement | null>(null);
+  const { scrollYProgress } = useScroll({
+    target: sectionEl,
+    offset: ['start end', 'end start'],
+  });
+  const translateY = useTransform(scrollYProgress, [0, 1], [250, -150]);
   return (
     <section className="bg-gradient-to-b from-white to-[#D2DCFF] overflow-x-clip">
-      <div className="container">
+      <div ref={sectionEl} className="container">
         <div className="max-w-lg mx-auto relative py-24 ">
           <div className="text-center">
             <h2 className="title">Sign up for free today</h2>
@@ -32,19 +38,21 @@ export const CallToAction: React.FC<ICallToAction> = ({}) => {
             </Button>
           </div>
 
-          <Image
+          <motion.img
             className="hidden md:block absolute max-w-[360px] h-auto -left-3/4 -top-10"
             src={StarImage.src}
             width={StarImage.width}
             height={StarImage.height}
             alt="Star Image"
+            style={{ translateY: translateY }}
           />
-          <Image
+          <motion.img
             className="hidden md:block absolute max-w-[363px] h-auto -right-3/4 bottom-0"
             src={SpringImage.src}
             width={SpringImage.width}
             height={SpringImage.height}
             alt="Spring Image"
+            style={{ translateY: translateY }}
           />
         </div>
       </div>

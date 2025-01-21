@@ -39,7 +39,7 @@ export const PricingCard: React.FC<IPricingCard> = ({
         <Button>{buttonText}</Button>
         <ul className="flex flex-col gap-y-5">
           {features.map((feature) => (
-            <li className="flex text-sm items-center gap-4">
+            <li className="flex text-sm items-center gap-4" key={feature}>
               <CheckIcon width={24} height={24} />
               <span>{feature}</span>
             </li>

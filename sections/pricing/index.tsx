@@ -1,5 +1,7 @@
+'use client';
+import { motion } from 'framer-motion';
+
 import { PricingCard } from '@/components/share/pricing-card';
-import React from 'react';
 
 interface IPricing {}
 
@@ -66,8 +68,20 @@ export const Pricing: React.FC<IPricing> = ({}) => {
           </p>
         </div>
         <ul className="flex flex-col gap-6 mt-10 md:flex-row items-end md:justify-center">
-          {pricingTiers.map((tier) => (
-            <PricingCard {...tier} />
+          {pricingTiers.map((tier, index) => (
+            <motion.li
+              key={tier.title}
+              initial={{ scale: 0.5, opacity: 0 }}
+              whileInView={{ scale: 1, opacity: 100 }}
+              viewport={{ once: true }}
+              transition={{
+                duration: 1,
+                delay: index / 2,
+                ease: 'easeInOut',
+              }}
+            >
+              <PricingCard {...tier} />
+            </motion.li>
           ))}
         </ul>
       </div>
