@@ -1,5 +1,6 @@
 'use client';
 import { useRef } from 'react';
+import Image from 'next/image';
 import Button from '@/components/share/ui/button';
 import { useScroll, useTransform, motion } from 'framer-motion';
 
@@ -37,23 +38,18 @@ export const CallToAction: React.FC<ICallToAction> = ({}) => {
               />
             </Button>
           </div>
-
-          <motion.img
+          <motion.div
             className="hidden md:block absolute max-w-[360px] h-auto -left-3/4 -top-10"
-            src={StarImage.src}
-            width={StarImage.width}
-            height={StarImage.height}
-            alt="Star Image"
             style={{ translateY: translateY }}
-          />
-          <motion.img
+          >
+            <Image src={StarImage.src} width={StarImage.width} height={StarImage.height} alt="Star Image" />
+          </motion.div>
+          <motion.div
             className="hidden md:block absolute max-w-[363px] h-auto -right-3/4 bottom-0"
-            src={SpringImage.src}
-            width={SpringImage.width}
-            height={SpringImage.height}
-            alt="Spring Image"
             style={{ translateY: translateY }}
-          />
+          >
+            <Image src={SpringImage.src} width={SpringImage.width} height={SpringImage.height} alt="Spring Image" />
+          </motion.div>
         </div>
       </div>
     </section>

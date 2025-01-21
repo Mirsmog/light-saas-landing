@@ -7,7 +7,12 @@
   --foreground: #171717;
 }
 
+
 @layer base {
+  html {
+    scrollbar-width: thin;
+  }
+
   body {
     @apply bg-background text-foreground;
   }

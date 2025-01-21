@@ -7,50 +7,50 @@ import LinkedInIcon from '@/assets/social-linkedin.svg';
 export const HEADER_LINKS = [
   {
     name: 'About',
-    href: 'about',
+    href: '/',
   },
   {
     name: 'Features',
-    href: 'features',
+    href: '/',
   },
   {
     name: 'Customers',
-    href: 'customers',
+    href: '/',
   },
   {
     name: 'Updates',
-    href: 'updates',
+    href: '/',
   },
   {
     name: 'Help',
-    href: 'help',
+    href: '/',
   },
 ];
 
 export const FOOTER_LINKS = [
   {
     name: 'About',
-    href: 'about',
+    href: '/',
   },
   {
     name: 'Features',
-    href: 'features',
+    href: '/',
   },
   {
     name: 'Customers',
-    href: 'customers',
+    href: '/',
   },
   {
     name: 'Pricing',
-    href: 'pricing',
+    href: '/',
   },
   {
     name: 'Help',
-    href: 'help',
+    href: '/',
   },
   {
     name: 'Careers',
-    href: 'careers',
+    href: '/',
   },
 ];
 

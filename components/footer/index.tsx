@@ -23,7 +23,7 @@ export const Footer = ({}) => {
           </nav>
           <ul className="flex gap-4 items-center">
             {SOCIALS_LINKS.map(({ name, href, Icon }) => (
-              <li className="">
+              <li className="" key={href}>
                 <Link title={name} href={href}>
                   <Icon width={24} height={24} />
                 </Link>

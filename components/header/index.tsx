@@ -76,7 +76,7 @@ const Header = () => {
                 <Button>Get for free</Button>
               </nav>
             </div>
-            <button className="md:hidden">
+            <button name="burger menu" title="burder menu" className="md:hidden">
               <MenuIcon className="size-5" />
             </button>
           </div>

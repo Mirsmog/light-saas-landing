@@ -6,7 +6,7 @@ import { useScroll, useTransform, motion } from 'framer-motion';
 
 import TubeImage from '@/assets/tube.png';
 import PyramidImage from '@/assets/pyramid.png';
-import ProductImage from '@/assets/product-image.png';
+import ProductImage from '@/assets/product-image.webp';
 
 export const ProductOverview = () => {
   const sectionEl = useRef<HTMLDivElement | null>(null);
@@ -32,23 +32,28 @@ export const ProductOverview = () => {
             width={ProductImage.width}
             height={ProductImage.height}
             alt="our product overview image"
+            loading="eager"
+            priority
           />
-          <motion.img
+
+          <motion.div
             className="absolute -right-36 -top-32 hidden h-auto max-w-[262px] md:block"
-            src={PyramidImage.src}
-            width={PyramidImage.width}
-            height={PyramidImage.height}
-            alt="pyramid"
             style={{ translateY: translateY }}
-          />
-          <motion.img
+          >
+            <Image
+              src={PyramidImage.src}
+              width={PyramidImage.width}
+              height={PyramidImage.height}
+              alt="pyramid"
+              loading="lazy"
+            />
+          </motion.div>
+          <motion.div
             className="absolute -left-36 bottom-14 hidden h-auto max-w-[248px] md:block lg:bottom-24"
-            src={TubeImage.src}
-            width={TubeImage.width}
-            height={TubeImage.height}
-            alt="pyramid"
             style={{ translateY: translateY }}
-          />
+          >
+            <Image src={TubeImage.src} width={TubeImage.width} height={TubeImage.height} alt="pyramid" loading="lazy" />
+          </motion.div>
         </div>
       </div>
     </section>

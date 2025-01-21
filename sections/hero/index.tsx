@@ -1,9 +1,10 @@
 'use client';
 import React, { useRef } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
+import Image from 'next/image';
 
 import Button from '@/components/share/ui/button';
-import cogImage from '@/assets/cog.png';
+import cogImage from '@/assets/cog.webp';
 import noodleImage from '@/assets/noodle.png';
 import cylinderImage from '@/assets/cylinder.png';
 import ArrowRightIcon from '@/assets/arrow-right.svg';
@@ -16,7 +17,7 @@ export const Hero: React.FC<IHero> = ({}) => {
     target: sectionEl,
     offset: ['start end', 'end start'],
   });
-  const translateY = useTransform(scrollYProgress, [0, 1], [250, -150]);
+  const translateY = useTransform(scrollYProgress, [0, 1], [150, -150]);
   return (
     <section
       ref={sectionEl}
@@ -30,7 +31,7 @@ export const Hero: React.FC<IHero> = ({}) => {
               <h1 className="bg-gradient-to-b from-black to-[#001E80] bg-clip-text text-5xl font-bold tracking-tighter text-transparent md:text-7xl">
                 Pathway to productivity
               </h1>
-              <p className="text-xl text-[#010D3E]">
+              <p className="text-xl text-[#010D3E] sm:text-base">
                 Celebrate the joy of accomplishment with an app designed to track your progress, motivate your efforts,
                 and celebrate your successes.
               </p>
@@ -48,39 +49,32 @@ export const Hero: React.FC<IHero> = ({}) => {
             </div>
             <Button className="mt-20 w-full md:hidden">Get for free</Button>
           </div>
+
           <div className="relative mt-20 md:mt-0 md:h-[648px] md:flex-1">
-            <motion.img
+            <motion.div
               className="md:absolute md:-left-6 md:h-full md:w-auto md:max-w-none"
-              src={cogImage.src}
-              width={650}
-              height={650}
-              alt="cog image"
-              animate={{
-                translateY: [-15, 15],
-              }}
-              transition={{
-                repeat: Infinity,
-                repeatType: 'mirror',
-                duration: 3,
-                ease: 'easeInOut',
-              }}
-            />
-            <motion.img
-              className="hidden md:block -top-8 -left-32 absolute"
-              src={cylinderImage.src}
-              width={220}
-              height={220}
-              alt="cylinder image"
-              style={{ translateY: translateY }}
-            />
-            <motion.img
-              className="hidden lg:block top-[524px] left-[448px] absolute"
-              src={noodleImage.src}
-              width={220}
-              height={220}
-              alt="noodle image"
+              animate={{ translateY: [-15, 15] }}
+              transition={{ repeat: Infinity, repeatType: 'mirror', duration: 3, ease: 'easeInOut' }}
+            >
+              <Image
+                src={cogImage.src}
+                width={650}
+                height={650}
+                alt="cog image"
+                loading="eager"
+                priority
+                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 75vw, (max-width: 1280px) 50vw, 800px"
+              />
+            </motion.div>
+            <motion.div className="hidden md:block -top-8 -left-32 absolute" style={{ translateY: translateY }}>
+              <Image src={cylinderImage.src} width={220} height={220} alt="cylinder image" loading="lazy" />
+            </motion.div>
+            <motion.div
+              className="hidden lg:block top-[524px] left-[448px] absolute w-[220px]"
               style={{ translateY: translateY, rotate: 30 }}
-            />
+            >
+              <Image className="" src={noodleImage.src} width={300} height={300} alt="noodle image" loading="lazy" />
+            </motion.div>
           </div>
         </div>
       </div>
